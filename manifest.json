@@ -1,0 +1,18 @@
+{
+    "name": "Strava風格運動追蹤器",
+    "short_name": "運動追蹤器",
+    "description": "全免費、高質感的跑步與單車運動軌跡壓圖工具",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#ff5722",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "Running.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

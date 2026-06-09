@@ -207,4 +207,13 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     });
 });
 
+// === 註冊 PWA 後台服務 (Service Worker) ===
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then((reg) => console.log('PWA Service Worker 註冊成功！範圍:', reg.scope))
+            .catch((err) => console.error('PWA Service Worker 註冊失敗:', err));
+    });
+}
+
 window.onload = initMap;
