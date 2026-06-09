@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免費運動追蹤器</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="dashboard">
+        <h1>我的運動紀錄</h1>
+        <div class="stat-box">
+            <span id="distance">0.00</span> <small>公里</small>
+        </div>
+        <div class="minor-stats">
+            <span>時間: <text id="timer">00:00:00</text></span> |
+            <span>時速: <text id="speed">--.-</text> km/h</span>
+        </div>
+        <div class="btn-group">
+            <button id="startBtn">開始運動</button>
+            <button id="stopBtn" disabled>結束並儲存</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="share-container" style="display:none;">
+        <div id="capture-card" class="card-style">
+            <img id="bg-preview" src="" alt="運動照片">
+
+            <div class="card-overlay-strava">
+                <div class="card-metrics-strava">
+                    <h2 id="card-date">跑步運動</h2>
+                    <p class="big-km"><span id="card-km">0.00</span> 公里</p>
+                    <p>配速 <span id="card-pace">--'--"</span> /公里</p>
+                    <p>時間 <span id="card-time">00:00:00</span></p>
+                </div>
+
+                <canvas id="mini-map-canvas" width="200" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="imageLoader" accept="image/*">
+    <button id="downloadBtn">下載分享圖</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>

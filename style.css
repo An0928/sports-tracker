@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#dashboard {
+    padding: 20px;
+    text-align: center;
+    background: #f8f9fa;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.stat-box {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.btn-group button {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startBtn {
+    background: #28a745;
+    color: white;
+}
+
+#stopBtn {
+    background: #dc3545;
+    color: white;
+}
+
+#stopBtn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+#map {
+    flex: 1;
+    width: 100%;
+}
+
+#share-container {
+    padding: 40px 20px;
+    background: #0a0a0a;
+    text-align: center;
+    color: white;
+}
+
+/* Strava 風格卡片 */
+#capture-card {
+    position: relative;
+    width: 375px;
+    /* 正方形，適合發 IG */
+    height: 375px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background: #1a1a1a;
+}
+
+/* 底圖照片 */
+#bg-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 疊加圖層：置中、文字陰影 */
+.card-overlay-strava {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    padding: 30px;
+    box-sizing: border-box;
+    /* 文字陰影：關鍵！防止文字遇白照片看不見 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 數據文字樣式 */
+.card-metrics-strava h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.card-metrics-strava .big-km {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-metrics-strava p {
+    margin: 4px 0;
+    font-size: 1.1rem;
+}
+
+/* 軌跡 Canvas：放在數據下方 */
+#mini-map-canvas {
+    margin-top: 20px;
+    width: 160px;
+    height: 160px;
+    background: transparent;
+    /* 背景透明，直接壓在照片上 */
+}
+
+/* 上傳與下載按鈕樣式 */
+#imageLoader {
+    margin-bottom: 15px;
+}
+
+#downloadBtn {
+    background: #0b13f8;
+    /* Strava 橘 */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+}
